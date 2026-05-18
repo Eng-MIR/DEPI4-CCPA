@@ -6,3 +6,11 @@ The Customer Churn Prediction and Analysis project involves building a machine l
 customer churn. This project utilizes data science techniques such as data collection, exploration, feature
 engineering, machine learning, and model deployment, with the goal of identifying customers at risk of
 leaving and enabling the company to take proactive retention measures.
+
+## Milestone 1: Data Collection, Exploration, and Preprocessing
+### Objectives:
+• Collect, explore, and preprocess customer churn data to prepare for analysis and model building.
+
+### Deliverables:
+• EDA Report: A document summarizing key insights from data exploration and preprocessing
+decisions.
