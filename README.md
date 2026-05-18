@@ -53,7 +53,6 @@ ________________________________________________________________________________
 • Final Presentation: A polished presentation for business stakeholders, explaining the model’s value and usage.
 _________________________________________________________________________________________________________________________
 ## Final Milestones Summary:
-------------------------------------------------------
 | Milestone | Key Deliverables  |
 |-----------|-------------------|
 | 1. Data Collection, Exploration & Preprocessing | EDA Report, Interactive Visualizations, Cleaned Dataset |
