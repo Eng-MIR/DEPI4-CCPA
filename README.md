@@ -9,7 +9,9 @@ The Customer Churn Prediction and Analysis project involves building a machine l
 • Collect, explore, and preprocess customer churn data to prepare for analysis and model building.
 ### Deliverables:
 • EDA Report: A document summarizing key insights from data exploration and preprocessing decisions.
+
 • Interactive Visualizations: An EDA notebook showcasing visualizations that reveal key patterns and relationships.
+
 • Cleaned Dataset: A dataset that is cleaned and prepared for machine learning.
 
 ## Milestone 2: Advanced Data Analysis and Feature Engineering
@@ -18,7 +20,9 @@ The Customer Churn Prediction and Analysis project involves building a machine l
 predictive power.
 ### Deliverables:
 • Data Analysis Report: A comprehensive report on statistical analysis and insights derived from advanced feature analysis.
+
 • Enhanced Visualizations: Interactive, insightful visualizations or dashboards that highlight churnrelated trends and important features.
+
 • Feature Engineering Summary: Documentation outlining new features, transformations, and their expected impact on model performance.
 
 ## Milestone 3: Machine Learning Model Development and Optimization
@@ -26,5 +30,7 @@ predictive power.
 • Build, train, and optimize machine learning models to predict churn.
 ### Deliverables:
 • Model Evaluation Report: A detailed report comparing model performance with evaluation metrics.
+
 • Model Code: Python code used to train, optimize, and evaluate the models.
+
 • Final Model: The best-performing churn prediction model, tuned and ready for deployment.
