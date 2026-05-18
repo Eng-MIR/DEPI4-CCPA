@@ -54,19 +54,15 @@ ________________________________________________________________________________
 _________________________________________________________________________________________________________________________
 ## Final Milestones Summary:
 ------------------------------------------------------
-| Milestone | Key Deliverables |
-------------------------------------------------------
+| Milestone | Key Deliverables  |
+|-----------|-------------------|
 | 1. Data Collection, Exploration & Preprocessing | EDA Report, Interactive Visualizations, Cleaned Dataset |
-------------------------------------------------------
 | 2. Advanced Data Analysis, Visualization & Feature Engineering | Data Analysis Report, Enhanced Visualizations, Feature
 Engineering Summary |
-------------------------------------------------------
 | 3. Model Development & Optimization | Model Evaluation Report, Model Code, Final Model |
-------------------------------------------------------
 | 4. MLOps, Deployment & Monitoring | Deployed Model, MLOps Report, Monitoring Setup |
-------------------------------------------------------
 | 5. Final Documentation & Presentation | Final Project Report, Final Presentation |
-------------------------------------------------------
+
 _________________________________________________________________________________________________________________________
 ## Conclusion:
 The Customer Churn Prediction and Analysis project aims to build a machine learning model that identifies
