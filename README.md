@@ -1,7 +1,7 @@
-## DEPI4-CCPA
+### DEPI4-CCPA
 DEPI4 Project: Customer Churn Prediction and Analysis
 
-#Project Overview:
+# Project Overview:
 
 The Customer Churn Prediction and Analysis project involves building a machine learning model to predict
 customer churn. This project utilizes data science techniques such as data collection, exploration, feature
