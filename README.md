@@ -1,3 +1,5 @@
+![CustomerChurn.png]
+
 # Project: Customer Churn Prediction and Analysis
 
 ## Project Overview:
