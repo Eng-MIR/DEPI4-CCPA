@@ -1,4 +1,4 @@
-![CustomerChurn.png]
+<img width="1024" height="366" alt="CustomerChurn" src="https://github.com/user-attachments/assets/0ca3df2e-3b47-42bb-ac5f-a2e423db95e6" />
 
 # Project: Customer Churn Prediction and Analysis
 
