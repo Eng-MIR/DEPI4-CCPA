@@ -1,0 +1,29 @@
+{
+  "model_name": "Gradient Boosting",
+  "saved_at": "2026-05-21 07:38:50",
+  "metrics": {
+    "accuracy": 0.7637,
+    "precision": 0.5372,
+    "recall": 0.7914,
+    "f1": 0.64,
+    "roc_auc": 0.8392
+  },
+  "selected_by": "F1 score",
+  "feature_names": [
+    "ChargePerService",
+    "TotalCharges",
+    "tenure",
+    "MonthlyCharges",
+    "AvgMonthlySpend",
+    "Contract_Two year",
+    "InternetService_Fiber optic",
+    "PaymentMethod_Electronic check",
+    "Contract_One year",
+    "IsLongTerm",
+    "TotalServices",
+    "PaperlessBilling_Yes",
+    "gender_Male",
+    "tenure_group_4-6 Years",
+    "Partner_Yes"
+  ]
+}
