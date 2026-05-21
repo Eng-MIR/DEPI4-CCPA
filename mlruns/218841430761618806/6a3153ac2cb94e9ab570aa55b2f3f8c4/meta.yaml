@@ -1,0 +1,14 @@
+artifact_uri: file:///content/mlruns/218841430761618806/6a3153ac2cb94e9ab570aa55b2f3f8c4/artifacts
+end_time: 1779402680092
+entry_point_name: ''
+experiment_id: '218841430761618806'
+lifecycle_stage: active
+run_id: 6a3153ac2cb94e9ab570aa55b2f3f8c4
+run_name: RandomForest_Model
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1779402658795
+status: 3
+tags: []
+user_id: root
