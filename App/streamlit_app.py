@@ -4,12 +4,12 @@ import pandas as pd
 import xgboost as xgb
 
 # Load feature names
-with open('app/model/feature_names.json') as f:
+with open('Model/feature_names.json') as f:
     feature_names = json.load(f)
 
 # Load XGBoost Booster model
 model = xgb.Booster()
-model.load_model('app/model/churn_model.json')
+model.load_model('Model/best_churn_model.joblib')
 
 st.title("Customer Churn Prediction App")
 
