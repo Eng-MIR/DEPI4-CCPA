@@ -116,7 +116,7 @@ st.subheader("Churn Prediction")
 #else:
 #    st.success("✅ Low churn risk.")
 
-if churn == 1:
+if churn > 0.6:
     st.error("❌ High Churn Risk — consider immediate retention actions")
 else:
     st.success("✅ No churn.")
