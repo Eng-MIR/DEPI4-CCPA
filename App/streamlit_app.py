@@ -117,6 +117,6 @@ else:
 '''
 
 if churn_prob == 1:
-    st.error("⚠️ Churn")
+    st.error("⚠️ High Churn Risk — consider immediate retention actions")
 else:
     st.success("✅ No churn.")
