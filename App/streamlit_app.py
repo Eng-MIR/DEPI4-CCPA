@@ -97,7 +97,7 @@ input_df_pd = pd.DataFrame([input_data])[feature_names]
 #dtest = xgb.DMatrix(input_df_pd)
 
 # Predict churn probability
-churn_prob = model.predict(input_df_pd)[0]
+churn_prob = model.predict(input_df_pd)
 
 # Display prediction
 st.subheader("Predicted Churn Probability")
