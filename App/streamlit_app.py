@@ -109,14 +109,14 @@ churn = model.predict(input_df_pd)
 st.subheader("Churn Prediction")
 #st.write(f"**{churn_prob:.2%} chance this customer will churn.**")
 
-#if churn_prob > 0.6:
-#    st.error("⚠️ High churn risk — consider immediate retention actions.")
-#elif churn_prob > 0.3:
-#    st.warning("🟠 Medium risk — consider engagement strategies.")
-#else:
-#    st.success("✅ Low churn risk.")
-
-if churn > 0.6:
-    st.error("❌ High Churn Risk — consider immediate retention actions")
+if churn_prob > 0.6:
+    st.error("⚠️ High churn risk — consider immediate retention actions.")
+elif churn_prob > 0.3:
+    st.warning("🟠 Medium risk — consider engagement strategies.")
 else:
-    st.success("✅ No churn.")
+    st.success("✅ Low churn risk.")
+
+#if churn > 0.6:
+#    st.error("❌ High Churn Risk — consider immediate retention actions")
+#else:
+#    st.success("✅ No churn.")
