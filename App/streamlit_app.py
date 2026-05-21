@@ -33,9 +33,11 @@ Adjust the features below and see the predicted risk!
 st.sidebar.header("Customer Information")
 
 # Numerical features
+charge_per_service = st.sidebar.slider('Charge per Service ($)', 0, 1000, 200)
 total_charges = st.sidebar.slider('Total Charges ($)', 0, 9000, 1000)
 tenure = st.sidebar.slider('Tenure (months)', 0, 72, 12)
 monthly_charges = st.sidebar.slider('Monthly Charges ($)', 18, 120, 70)
+avg_monthly_spend = st.sidebar.slider('Average Monthly Spend ($)', 20, 120, 50)
 
 
 # Contract type
@@ -45,19 +47,21 @@ contract = st.sidebar.selectbox("Contract Type", ("Month-to-month", "One year", 
 internet_service = st.sidebar.selectbox("Internet Service", ("Fiber optic", "DSL", "No"))
 
 # Online security
-online_security = st.sidebar.selectbox("Online Security", ("Yes", "No"))
+#online_security = st.sidebar.selectbox("Online Security", ("Yes", "No"))
 
 # Tech support
-tech_support = st.sidebar.selectbox("Tech Support", ("Yes", "No"))
+#tech_support = st.sidebar.selectbox("Tech Support", ("Yes", "No"))
 
 # Payment method
 payment_method = st.sidebar.selectbox("Payment Method", ("Electronic check", "Mailed check", "Bank transfer (automatic)", "Credit card (automatic)"))
 
 # Base numeric features
 input_data = {
+    'ChargePerService': charge_per_service,
     'tenure': tenure,
     'MonthlyCharges': monthly_charges,
     'TotalCharges': total_charges,
+    'AvgMonthlySpend': avg_monthly_spend
     'gender': 1,  # default example (could be extended)
     'SeniorCitizen': 0,
     'Partner': 1,
