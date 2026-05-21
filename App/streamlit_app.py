@@ -103,15 +103,15 @@ input_df_pd = pd.DataFrame([input_data])[feature_names]
 #dtest = xgb.DMatrix(input_df_pd)
 
 # Predict churn probability
-churn = model.predict(input_df_pd)
+churn_proba = model.predict(input_df_pd)
 
 # Display prediction
-st.subheader("Churn Prediction")
+st.subheader("Churn Prediction Probability")
 #st.write(f"**{churn_prob:.2%} chance this customer will churn.**")
 
-if churn_prob > 0.6:
+if churn_proba > 0.6:
     st.error("⚠️ High churn risk — consider immediate retention actions.")
-elif churn_prob > 0.3:
+elif churn_proba > 0.3:
     st.warning("🟠 Medium risk — consider engagement strategies.")
 else:
     st.success("✅ Low churn risk.")
