@@ -94,7 +94,7 @@ for col in feature_names:
 input_df_pd = pd.DataFrame([input_data])[feature_names]
 
 # Convert to DMatrix
-dtest = xgb.DMatrix(input_df_pd)
+dtest = gbc.DMatrix(input_df_pd)
 
 # Predict churn probability
 churn_prob = model.predict(dtest)[0]
