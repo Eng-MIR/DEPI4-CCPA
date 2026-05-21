@@ -61,7 +61,7 @@ input_data = {
     'tenure': tenure,
     'MonthlyCharges': monthly_charges,
     'TotalCharges': total_charges,
-    'AvgMonthlySpend': avg_monthly_spend
+    'AvgMonthlySpend': avg_monthly_spend,
     'gender': 1,  # default example (could be extended)
     'SeniorCitizen': 0,
     'Partner': 1,
