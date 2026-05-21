@@ -6,7 +6,7 @@ import xgboost as xgb
 #from sklearn.ensemble import GradientBoostingClassifier as gbc
 
 # Load feature names
-with open('app/model/feature_names.json') as f:
+with open('Model/feature_names.json') as f:
     feature_names = json.load(f)
     
 # Load feature names
@@ -21,7 +21,7 @@ with open('app/model/feature_names.json') as f:
 
 # Load XGBoost Booster model
 model = xgb.Booster()
-model.load_model('Model/churn_model.joblib')
+model.load_model('Model/churn_model.json')
 
 st.title("Customer Churn Prediction App")
 
