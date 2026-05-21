@@ -23,14 +23,15 @@ model = joblib.load('Model/best_churn_model.joblib')
 #model = xgb.Booster()
 #model.load_model('Model/churn_model.json')
 
-st.title("Customer Churn Prediction App")
+st.title("Customer Churn Prediction Application")
 
 st.write("""
-This app predicts **customer churn** based on input features.  
-Adjust the features below and see the predicted risk!
+This app predicts **Customer Churn** based on Top features.  
+Adjust the features beside and see the prediction!
 """)
 
 st.sidebar.header("Customer Information")
+st.sidebar.subheader("Customer Information")
 
 # Numerical features
 charge_per_service = st.sidebar.slider('Charge per Service ($)', 0, 1000, 200)
@@ -44,16 +45,16 @@ avg_monthly_spend = st.sidebar.slider('Average Monthly Spend ($)', 20, 120, 50)
 contract = st.sidebar.selectbox("Contract Type", ("Month-to-month", "One year", "Two year"))
 
 # Internet service
-internet_service = st.sidebar.selectbox("Internet Service", ("Fiber optic", "DSL", "No"))
+internet_service = st.sidebar.selectbox("Internet Service", ("Fiber optic", "Other"))    #"DSL", "No"))
 
 # Online security
-online_security = st.sidebar.selectbox("Online Security", ("Yes", "No"))
+#online_security = st.sidebar.selectbox("Online Security", ("Yes", "No"))
 
 # Tech support
-tech_support = st.sidebar.selectbox("Tech Support", ("Yes", "No"))
+#tech_support = st.sidebar.selectbox("Tech Support", ("Yes", "No"))
 
 # Payment method
-payment_method = st.sidebar.selectbox("Payment Method", ("Electronic check", "Mailed check", "Bank transfer (automatic)", "Credit card (automatic)"))
+payment_method = st.sidebar.selectbox("Payment Method", ("Electronic check", "Others"))    #"Mailed check", "Bank transfer (automatic)", "Credit card (automatic)"))
 
 # Base numeric features
 input_data = {
@@ -79,11 +80,11 @@ input_data['InternetService_Fiber optic'] = 1 if internet_service == "Fiber opti
 input_data['InternetService_DSL'] = 1 if internet_service == "DSL" else 0
 input_data['InternetService_No'] = 1 if internet_service == "No" else 0
 
-input_data['OnlineSecurity_Yes'] = 1 if online_security == "Yes" else 0
-input_data['OnlineSecurity_No'] = 1 if online_security == "No" else 0
+#input_data['OnlineSecurity_Yes'] = 1 if online_security == "Yes" else 0
+#input_data['OnlineSecurity_No'] = 1 if online_security == "No" else 0
 
-input_data['TechSupport_Yes'] = 1 if tech_support == "Yes" else 0
-input_data['TechSupport_No'] = 1 if tech_support == "No" else 0
+#input_data['TechSupport_Yes'] = 1 if tech_support == "Yes" else 0
+#input_data['TechSupport_No'] = 1 if tech_support == "No" else 0
 
 input_data['PaymentMethod_Electronic check'] = 1 if payment_method == "Electronic check" else 0
 input_data['PaymentMethod_Mailed check'] = 1 if payment_method == "Mailed check" else 0
@@ -102,10 +103,10 @@ input_df_pd = pd.DataFrame([input_data])[feature_names]
 #dtest = xgb.DMatrix(input_df_pd)
 
 # Predict churn probability
-churn_prob = model.predict(input_df_pd)
+churn = model.predict(input_df_pd)
 
 # Display prediction
-st.subheader("Predicted Churn Probability")
+st.subheader("Churn Prediction")
 #st.write(f"**{churn_prob:.2%} chance this customer will churn.**")
 
 #if churn_prob > 0.6:
@@ -115,7 +116,7 @@ st.subheader("Predicted Churn Probability")
 #else:
 #    st.success("✅ Low churn risk.")
 
-if churn_prob == 1:
-    st.error("⚠️ High Churn Risk — consider immediate retention actions")
+if churn == 1:
+    st.error("❌ High Churn Risk — consider immediate retention actions")
 else:
     st.success("✅ No churn.")
