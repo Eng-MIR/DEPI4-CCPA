@@ -1,0 +1,31 @@
+Feature,Importance
+ChargePerService,0.151389615
+TotalCharges,0.114329488
+tenure,0.111736792
+MonthlyCharges,0.103838446
+AvgMonthlySpend,0.103050588
+Contract_Two year,0.048178548
+InternetService_Fiber optic,0.034084225
+PaymentMethod_Electronic check,0.027957464
+Contract_One year,0.023447388
+IsLongTerm,0.022775137
+TotalServices,0.021774325
+PaperlessBilling_Yes,0.019953381
+gender_Male,0.019573276
+tenure_group_4-6 Years,0.018324694
+Partner_Yes,0.015509467
+Dependents_Yes,0.014730396
+OnlineSecurity_Yes,0.014533155
+SeniorCitizen,0.01391672
+TechSupport_Yes,0.013636797
+InternetService_No,0.013277535
+OnlineBackup_Yes,0.01245248
+MultipleLines_Yes,0.011908698
+StreamingTV_Yes,0.011097867
+DeviceProtection_Yes,0.010829824
+PaymentMethod_Mailed check,0.010684841
+PaymentMethod_Credit card (automatic),0.010639843
+StreamingMovies_Yes,0.010442334
+tenure_group_1-2 Years,0.005854174
+tenure_group_2-4 Years,0.005634032
+PhoneService_Yes,0.004438469
