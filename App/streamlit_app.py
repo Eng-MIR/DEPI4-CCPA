@@ -33,9 +33,10 @@ Adjust the features below and see the predicted risk!
 st.sidebar.header("Customer Information")
 
 # Numerical features
+total_charges = st.sidebar.slider('Total Charges ($)', 0, 9000, 1000)
 tenure = st.sidebar.slider('Tenure (months)', 0, 72, 12)
 monthly_charges = st.sidebar.slider('Monthly Charges ($)', 18, 120, 70)
-total_charges = st.sidebar.slider('Total Charges ($)', 0, 9000, 1000)
+
 
 # Contract type
 contract = st.sidebar.selectbox("Contract Type", ("Month-to-month", "One year", "Two year"))
