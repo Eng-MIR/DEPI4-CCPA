@@ -1,15 +1,23 @@
 import streamlit as st
 import json
+import joblib
 import pandas as pd
-import xgboost as xgb
+#import xgboost as xgb
+from sklearn.ensemble import GradientBoostingClassifier as gbc
 
 # Load feature names
-with open('Model/feature_names.json') as f:
+with open('Model/Selected_Feature.json') as f:
     feature_names = json.load(f)
 
+# Load the model from the .joblib file
+model = joblib.load('Model/best_churn_model.joblib')
+
+# Now you can use it for predictions
+# predictions = model.predict(X_test)
+
 # Load XGBoost Booster model
-model = xgb.Booster()
-model.load_model('Model/best_churn_model.joblib')
+# model = xgb.Booster()
+# model.load_model('Model/best_churn_model.joblib')
 
 st.title("Customer Churn Prediction App")
 
