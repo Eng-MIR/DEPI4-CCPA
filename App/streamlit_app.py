@@ -47,10 +47,10 @@ contract = st.sidebar.selectbox("Contract Type", ("Month-to-month", "One year", 
 internet_service = st.sidebar.selectbox("Internet Service", ("Fiber optic", "DSL", "No"))
 
 # Online security
-#online_security = st.sidebar.selectbox("Online Security", ("Yes", "No"))
+online_security = st.sidebar.selectbox("Online Security", ("Yes", "No"))
 
 # Tech support
-#tech_support = st.sidebar.selectbox("Tech Support", ("Yes", "No"))
+tech_support = st.sidebar.selectbox("Tech Support", ("Yes", "No"))
 
 # Payment method
 payment_method = st.sidebar.selectbox("Payment Method", ("Electronic check", "Mailed check", "Bank transfer (automatic)", "Credit card (automatic)"))
