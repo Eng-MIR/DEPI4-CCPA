@@ -1,7 +1,7 @@
 artifact_location: file:///content/mlruns/0
-creation_time: 1779405987434
+creation_time: 1779406642470
 experiment_id: '0'
-last_update_time: 1779405987434
+last_update_time: 1779406642470
 lifecycle_stage: active
 name: Default
 trace_location: null

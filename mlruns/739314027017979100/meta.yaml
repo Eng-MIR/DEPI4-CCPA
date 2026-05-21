@@ -1,0 +1,8 @@
+artifact_location: file:///content/mlruns/739314027017979100
+creation_time: 1779406642494
+experiment_id: '739314027017979100'
+last_update_time: 1779406642494
+lifecycle_stage: active
+name: Customer_Churn_Prediction
+trace_location: null
+workspace: default
