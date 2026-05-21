@@ -116,7 +116,7 @@ else:
     st.success("✅ Low churn risk.")
 '''
 
-if churn_prob == 1
+if churn_prob == 1:
     st.error("⚠️ Churn")
 else:
     st.success("✅ No churn.")
