@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-model = joblib.load('customer_churn_model.pkl')
-scaler = joblib.load('scaler.pkl')
+model = joblib.load('Models/customer_churn_model.pkl')
+scaler = joblib.load('Models/scaler.pkl')
 
 st.title('Customer Churn Prediction Dashboard')
 
