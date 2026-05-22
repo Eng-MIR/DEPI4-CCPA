@@ -21,12 +21,13 @@ input_data = pd.DataFrame({
 })
 
 # Reshape to 2D: (1 sample, n_features)
-input_array = np.array(input_data).reshape(1, -1) 
+#input_array = np.array(input_data).reshape(1, -1) 
 
 if st.button('Predict Churn'):
     
-    scaled_data = scaler.transform(input_array)
-
+    #scaled_data = scaler.transform(input_array)
+    scaled_data = scaler.transform(input_data.to_numpy())
+    
     prediction = model.predict(scaled_data)[0]
     probability = model.predict_proba(scaled_data)[0][1]
 
