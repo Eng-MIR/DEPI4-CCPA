@@ -5,8 +5,8 @@ import pandas as pd
 
 app = FastAPI()
 
-model = joblib.load('customer_churn_model.pkl')
-scaler = joblib.load('scaler.pkl')
+model = joblib.load('/content/Models/customer_churn_rf_model.pkl')
+scaler = joblib.load('/content/Models/scaler.pkl')
 
 class CustomerData(BaseModel):
     gender: int
