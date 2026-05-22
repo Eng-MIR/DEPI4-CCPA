@@ -13,6 +13,7 @@ st.set_page_config(
 
 # Display Title
 st.title('Customer Churn Prediction Dashboard')
+st.markdown('This app predicts Customer Churn based on Top features.')
 st.markdown('Enter customer information to predict churn probability.')
 
 # Sidebar Inputs
