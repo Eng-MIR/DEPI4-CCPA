@@ -15,10 +15,6 @@ st.set_page_config(
 st.title('Customer Churn Prediction Dashboard')
 st.markdown('Enter customer information to predict churn probability.')
 
-# Display Entered Data
-st.subheader('Input Summary')
-st.dataframe(input_data)
-
 # Sidebar Inputs
 st.sidebar.header('Customer Information')
 
@@ -153,4 +149,6 @@ if st.button('Predict Churn'):
     # Probability Progress Bar
     st.progress(float(probability))
 
-
+# Display Entered Data
+st.subheader('Input Summary')
+st.dataframe(input_data)
