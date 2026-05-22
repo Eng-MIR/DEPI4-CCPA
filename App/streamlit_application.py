@@ -7,12 +7,12 @@ model = joblib.load('Models/customer_churn_rf_model.pkl')
 scaler = joblib.load('Models/scaler.pkl')
 
 st.set_page_config(
-    page_title='Customer Churn Prediction Dashboard',
+    page_title='Customer Churn Prediction Application',
     layout='centered'
 )
 
 # Display Title
-st.title('Customer Churn Prediction Dashboard')
+st.title('Customer Churn Prediction Application')
 st.markdown('This app predicts Customer Churn based on Top features.')
 st.markdown('Enter customer information to predict churn probability.')
 
