@@ -2,11 +2,12 @@
 
 # Project: Customer Churn Prediction and Analysis
 
-| ## Contributors |
-| * Dr. Ahmed Esmail        | [@napolion2000](https://github.com/napolion2000)   |
-| * Eng. Amr Elazab         | [@amrelazab1980](https://github.com/amrelazab1980) | 
-| * Eng. Mohamed Ibrahem    | [@Eng-MIR](https://github.com/Eng-MIR)             |
-| * Eng. Mohamed Abdulaziz  | [@Zizox86](https://github.com/Zizox86)             |
+| ## Contributors | Github                                                       | Milestone       |
+|-----------------|--------------------------------------------------------------|-----------------|
+| * Dr. Ahmed Esmail        | [@napolion2000](https://github.com/napolion2000)   | Milestone 1 & 2 |
+| * Eng. Amr Elazab         | [@amrelazab1980](https://github.com/amrelazab1980) | Milestone 3     |
+| * Eng. Mohamed Ibrahem    | [@Eng-MIR](https://github.com/Eng-MIR)             | Milestone 4     |
+| * Eng. Mohamed Abdulaziz  | [@Zizox86](https://github.com/Zizox86)             | Milestone 5     |
 
 ## Project Overview:
 The Customer Churn Prediction and Analysis project involves building a machine learning model to predict customer churn. This project utilizes data science techniques such as data collection, exploration, feature engineering, machine learning, and model deployment, with the goal of identifying customers at risk of leaving and enabling the company to take proactive retention measures.
