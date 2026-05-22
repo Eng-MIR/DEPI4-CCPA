@@ -2,8 +2,8 @@
 
 # Project: Customer Churn Prediction and Analysis
 
-| ## Contributors | Github                                                       | Milestone       |
-|-----------------|--------------------------------------------------------------|-----------------|
+| **Contributors**          | **Github**                                         | **Milestone**   |
+|---------------------------|----------------------------------------------------|-----------------|
 | * Dr. Ahmed Esmail        | [@napolion2000](https://github.com/napolion2000)   | Milestone 1 & 2 |
 | * Eng. Amr Elazab         | [@amrelazab1980](https://github.com/amrelazab1980) | Milestone 3     |
 | * Eng. Mohamed Ibrahem    | [@Eng-MIR](https://github.com/Eng-MIR)             | Milestone 4     |
