@@ -2,116 +2,190 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-# Load model and scaler
-model = joblib.load('Models/customer_churn_model.pkl')
+# =========================
+# Load Model and Scaler
+# =========================
+
+model = joblib.load('Models/customer_churn_rf_model.pkl')
 scaler = joblib.load('Models/scaler.pkl')
+top_features = joblib.load('Models/top_10_features.pkl')
 
-st.set_page_config(page_title="Customer Churn Prediction")
+# =========================
+# Streamlit Page Config
+# =========================
 
-st.title("Customer Churn Prediction Dashboard")
+st.set_page_config(
+    page_title='Customer Churn Prediction',
+    page_icon='📊',
+    layout='centered'
+)
 
-st.sidebar.header("Customer Information")
+st.title('📊 Customer Churn Prediction Dashboard')
 
-# -----------------------------
-# User Inputs
-# -----------------------------
+st.markdown("""
+Predict whether a customer is likely to churn based on customer information.
+""")
 
-gender = st.sidebar.selectbox("Gender", [0, 1])
+# =========================
+# Sidebar Inputs
+# =========================
 
-SeniorCitizen = st.sidebar.selectbox("Senior Citizen", [0, 1])
+st.sidebar.header('Customer Information')
 
-Partner = st.sidebar.selectbox("Partner", [0, 1])
+# Gender
+gender_option = st.sidebar.selectbox(
+    'Gender',
+    ['Female', 'Male']
+)
 
-Dependents = st.sidebar.selectbox("Dependents", [0, 1])
+gender = 0 if gender_option == 'Female' else 1
 
-tenure = st.sidebar.slider("Tenure", 0, 72, 12)
+# Senior Citizen
+senior_option = st.sidebar.selectbox(
+    'Senior Citizen',
+    ['No', 'Yes']
+)
 
-PhoneService = st.sidebar.selectbox("Phone Service", [0, 1])
+SeniorCitizen = 1 if senior_option == 'Yes' else 0
 
-MultipleLines = st.sidebar.selectbox("Multiple Lines", [0, 1, 2])
+# Partner
+partner_option = st.sidebar.selectbox(
+    'Partner',
+    ['No', 'Yes']
+)
 
-InternetService = st.sidebar.selectbox("Internet Service", [0, 1, 2])
+Partner = 1 if partner_option == 'Yes' else 0
 
-OnlineSecurity = st.sidebar.selectbox("Online Security", [0, 1, 2])
+# Dependents
+dependents_option = st.sidebar.selectbox(
+    'Dependents',
+    ['No', 'Yes']
+)
 
-OnlineBackup = st.sidebar.selectbox("Online Backup", [0, 1, 2])
+Dependents = 1 if dependents_option == 'Yes' else 0
 
-DeviceProtection = st.sidebar.selectbox("Device Protection", [0, 1, 2])
+# Tenure
+tenure = st.sidebar.slider(
+    'Tenure (Months)',
+    min_value=0,
+    max_value=72,
+    value=12
+)
 
-TechSupport = st.sidebar.selectbox("Tech Support", [0, 1, 2])
+# Online Security
+security_option = st.sidebar.selectbox(
+    'Online Security',
+    ['No', 'Yes']
+)
 
-StreamingTV = st.sidebar.selectbox("Streaming TV", [0, 1, 2])
+OnlineSecurity = 1 if security_option == 'Yes' else 0
 
-StreamingMovies = st.sidebar.selectbox("Streaming Movies", [0, 1, 2])
+# Tech Support
+tech_support_option = st.sidebar.selectbox(
+    'Tech Support',
+    ['No', 'Yes']
+)
 
-Contract = st.sidebar.selectbox("Contract", [0, 1, 2])
+TechSupport = 1 if tech_support_option == 'Yes' else 0
 
-PaperlessBilling = st.sidebar.selectbox("Paperless Billing", [0, 1])
+# Contract Type
+contract_option = st.sidebar.selectbox(
+    'Contract Type',
+    ['Month-to-Month', 'One Year', 'Two Year']
+)
 
-PaymentMethod = st.sidebar.selectbox("Payment Method", [0, 1, 2, 3])
+contract_mapping = {
+    'Month-to-Month': 0,
+    'One Year': 1,
+    'Two Year': 2
+}
 
-MonthlyCharges = st.sidebar.slider("Monthly Charges", 0.0, 200.0, 70.0)
+Contract = contract_mapping[contract_option]
 
-TotalCharges = st.sidebar.slider("Total Charges", 0.0, 10000.0, 2000.0)
+# Monthly Charges
+MonthlyCharges = st.sidebar.slider(
+    'Monthly Charges',
+    min_value=0.0,
+    max_value=200.0,
+    value=70.0
+)
 
-# customerID feature placeholder
-customerID = st.sidebar.number_input("Customer ID", value=1)
+# Total Charges
+TotalCharges = st.sidebar.slider(
+    'Total Charges',
+    min_value=0.0,
+    max_value=10000.0,
+    value=2000.0
+)
 
-# -----------------------------
+# =========================
 # Create Input DataFrame
-# -----------------------------
+# =========================
 
 input_data = pd.DataFrame({
-    'customerID': [customerID],
     'gender': [gender],
     'SeniorCitizen': [SeniorCitizen],
     'Partner': [Partner],
     'Dependents': [Dependents],
     'tenure': [tenure],
-    'PhoneService': [PhoneService],
-    'MultipleLines': [MultipleLines],
-    'InternetService': [InternetService],
     'OnlineSecurity': [OnlineSecurity],
-    'OnlineBackup': [OnlineBackup],
-    'DeviceProtection': [DeviceProtection],
     'TechSupport': [TechSupport],
-    'StreamingTV': [StreamingTV],
-    'StreamingMovies': [StreamingMovies],
     'Contract': [Contract],
-    'PaperlessBilling': [PaperlessBilling],
-    'PaymentMethod': [PaymentMethod],
     'MonthlyCharges': [MonthlyCharges],
     'TotalCharges': [TotalCharges]
 })
 
-# -----------------------------
-# Prediction
-# -----------------------------
+# Ensure correct column order
+input_data = input_data[top_features]
 
-if st.button("Predict Churn"):
+# =========================
+# Display Input Summary
+# =========================
+
+st.subheader('Customer Information Summary')
+
+st.dataframe(input_data)
+
+# =========================
+# Prediction Button
+# =========================
+
+if st.button('Predict Churn'):
 
     # Scale data
     scaled_data = scaler.transform(input_data)
 
-    # Predict
+    # Make prediction
     prediction = model.predict(scaled_data)[0]
 
-    # Probability
+    # Prediction probability
     probability = model.predict_proba(scaled_data)[0][1]
 
-    st.subheader("Prediction Result")
+    st.subheader('Prediction Result')
 
+    # Display result
     if prediction == 1:
+
         st.error(
-            f"Customer is likely to churn.\n\n"
-            f"Churn Probability: {probability:.2%}"
-        )
-    else:
-        st.success(
-            f"Customer is not likely to churn.\n\n"
-            f"Churn Probability: {probability:.2%}"
+            f'⚠️ Customer is likely to churn.\n\n'
+            f'Churn Probability: {probability:.2%}'
         )
 
-    # Display input data
-    st.subheader("Customer Input Data")
-    st.dataframe(input_data)
+    else:
+
+        st.success(
+            f'✅ Customer is not likely to churn.\n\n'
+            f'Churn Probability: {probability:.2%}'
+        )
+
+    # Progress Bar
+    st.progress(float(probability))
+
+# =========================
+# Footer
+# =========================
+
+st.markdown('---')
+st.markdown(
+    'Built using Streamlit, Scikit-learn, and MLflow'
+)
