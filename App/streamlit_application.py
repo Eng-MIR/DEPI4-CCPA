@@ -125,6 +125,10 @@ input_data = pd.DataFrame({
     'OnlineBackup': [OnlineBackup]
 })
 
+# Display Entered Data
+st.subheader('Input Summary')
+st.dataframe(input_data)
+
 # Prediction
 if st.button('Predict Churn'):
     # Scale input data
@@ -148,7 +152,3 @@ if st.button('Predict Churn'):
 
     # Probability Progress Bar
     st.progress(float(probability))
-
-# Display Entered Data
-st.subheader('Input Summary')
-st.dataframe(input_data)
