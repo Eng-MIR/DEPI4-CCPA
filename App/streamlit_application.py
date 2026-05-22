@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import numpy as np
 
 model = joblib.load('Models/customer_churn_model.pkl')
 scaler = joblib.load('Models/scaler.pkl')
@@ -19,9 +20,12 @@ input_data = pd.DataFrame({
     'TotalCharges': [total_charges]
 })
 
-if st.button('Predict Churn'):
+# Reshape to 2D: (1 sample, n_features)
+input_array = np.array(input_data).reshape(1, -1) 
 
-    scaled_data = scaler.transform(input_data)
+if st.button('Predict Churn'):
+    
+    scaled_data = scaler.transform(input_array)
 
     prediction = model.predict(scaled_data)[0]
     probability = model.predict_proba(scaled_data)[0][1]
