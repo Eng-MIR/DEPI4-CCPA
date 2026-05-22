@@ -1,0 +1,10 @@
+artifact_location: file:///content/mlruns/503888609355123195/models/m-33aaafa0a15b44a4bca25a7edd2707c9/artifacts
+creation_timestamp: 1779427105767
+experiment_id: '503888609355123195'
+last_updated_timestamp: 1779427109917
+model_id: m-33aaafa0a15b44a4bca25a7edd2707c9
+model_type: null
+name: xgboost_model
+source_run_id: d7f783b6589c4bbfa0b7c3307fbf14d0
+status: 2
+status_message: null
