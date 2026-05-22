@@ -11,18 +11,18 @@ st.set_page_config(
     layout='centered'
 )
 
+# Display Title
 st.title('Customer Churn Prediction Dashboard')
-
 st.markdown('Enter customer information to predict churn probability.')
 
-# =========================================================
-# Sidebar Inputs
-# =========================================================
+# Display Entered Data
+st.subheader('Input Summary')
+st.dataframe(input_data)
 
+# Sidebar Inputs
 st.sidebar.header('Customer Information')
 
 # Numerical Features
-
 TotalCharges = st.sidebar.slider(
     'Total Charges',
     min_value=0.0,
@@ -44,15 +44,11 @@ tenure = st.sidebar.slider(
     value=24
 )
 
-# =========================================================
 # Categorical Features
-# =========================================================
-
 contract_option = st.sidebar.selectbox(
     'Contract Type',
     ['Month-to-month', 'One year', 'Two year']
 )
-
 payment_option = st.sidebar.selectbox(
     'Payment Method',
     [
@@ -62,69 +58,54 @@ payment_option = st.sidebar.selectbox(
         'Credit card (automatic)'
     ]
 )
-
 online_security_option = st.sidebar.selectbox(
     'Online Security',
     ['No', 'Yes']
 )
-
 tech_support_option = st.sidebar.selectbox(
     'Tech Support',
     ['No', 'Yes']
 )
-
 gender_option = st.sidebar.selectbox(
     'Gender',
     ['Female', 'Male']
 )
-
 internet_option = st.sidebar.selectbox(
     'Internet Service',
     ['DSL', 'Fiber optic', 'No']
 )
-
 online_backup_option = st.sidebar.selectbox(
     'Online Backup',
     ['No', 'Yes']
 )
 
-# =========================================================
 # Encoding Mappings
-# =========================================================
-
 contract_mapping = {
     'Month-to-month': 0,
     'One year': 1,
     'Two year': 2
 }
-
 payment_mapping = {
     'Electronic check': 0,
     'Mailed check': 1,
     'Bank transfer (automatic)': 2,
     'Credit card (automatic)': 3
 }
-
 binary_mapping = {
     'No': 0,
     'Yes': 1
 }
-
 gender_mapping = {
     'Female': 0,
     'Male': 1
 }
-
 internet_mapping = {
     'DSL': 0,
     'Fiber optic': 1,
     'No': 2
 }
 
-# =========================================================
 # Convert Inputs to Encoded Values
-# =========================================================
-
 Contract = contract_mapping[contract_option]
 PaymentMethod = payment_mapping[payment_option]
 OnlineSecurity = binary_mapping[online_security_option]
@@ -133,12 +114,8 @@ gender = gender_mapping[gender_option]
 InternetService = internet_mapping[internet_option]
 OnlineBackup = binary_mapping[online_backup_option]
 
-# =========================================================
 # Create Input DataFrame
-# IMPORTANT:
-# Must match exact training feature order
-# =========================================================
-
+# IMPORTANT: Must match exact training feature order
 input_data = pd.DataFrame({
     'TotalCharges': [TotalCharges],
     'MonthlyCharges': [MonthlyCharges],
@@ -152,21 +129,14 @@ input_data = pd.DataFrame({
     'OnlineBackup': [OnlineBackup]
 })
 
-# =========================================================
 # Prediction
-# =========================================================
-
 if st.button('Predict Churn'):
-
     # Scale input data
     scaled_data = scaler.transform(input_data)
-
     # Predict
     prediction = model.predict(scaled_data)[0]
-
     # Predict probability
     probability = model.predict_proba(scaled_data)[0][1]
-
     st.subheader('Prediction Result')
 
     if prediction == 1:
@@ -183,10 +153,4 @@ if st.button('Predict Churn'):
     # Probability Progress Bar
     st.progress(float(probability))
 
-# =========================================================
-# Display Entered Data
-# =========================================================
 
-st.subheader('Input Summary')
-
-st.dataframe(input_data)
