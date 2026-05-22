@@ -136,7 +136,7 @@ input_data = pd.DataFrame({
 })
 
 # Ensure correct column order
-input_data = input_data[top_features]
+#input_data = input_data[top_features]
 
 # =========================
 # Display Input Summary
