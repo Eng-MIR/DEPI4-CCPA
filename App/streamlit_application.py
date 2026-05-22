@@ -3,8 +3,8 @@ import pandas as pd
 import joblib
 
 # Load model and scaler
-model = joblib.load('customer_churn_model.pkl')
-scaler = joblib.load('scaler.pkl')
+model = joblib.load('Models/customer_churn_model.pkl')
+scaler = joblib.load('Models/scaler.pkl')
 
 st.set_page_config(page_title="Customer Churn Prediction")
 
